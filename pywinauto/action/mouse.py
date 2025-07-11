@@ -16,7 +16,7 @@ MOUSEEVENTF_HWHEEL     = 0x1000
 XBUTTON1 = 0x0001
 XBUTTON2 = 0x0002
 
-# 定义必要的结构体
+# 定义结构体
 class MOUSEINPUT(ctypes.Structure):
     _fields_ = [
         ("dx", ctypes.c_long),
