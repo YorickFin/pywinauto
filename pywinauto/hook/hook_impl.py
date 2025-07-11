@@ -86,7 +86,7 @@ user32.UnhookWindowsHookEx.restype = wintypes.BOOL
 # 获取模块句柄签名
 kernel32.GetModuleHandleW.argtypes = [wintypes.LPCWSTR]
 kernel32.GetModuleHandleW.restype = wintypes.HMODULE
-# 新增：获取光标位置签名
+# 获取光标位置签名
 user32.GetCursorPos.argtypes = [POINTER(wintypes.POINT)]
 user32.GetCursorPos.restype = wintypes.BOOL
 
@@ -104,7 +104,7 @@ def set_event_handlers(on_keydown=None, on_keyup=None, on_mousedown=None, on_mou
     if on_mousedown: _on_mousedown = on_mousedown
     if on_mouseup:   _on_mouseup   = on_mouseup
 
-# 新增：获取当前鼠标位置
+# 获取当前鼠标位置
 def get_mouse_position():
     pt = wintypes.POINT()
     if user32.GetCursorPos(byref(pt)):
