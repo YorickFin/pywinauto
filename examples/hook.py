@@ -1,5 +1,5 @@
 
-import pythoncom
+import time
 from pywinauto import set_event_handlers, start_listening, stop_listening, get_mouse_position
 
 # 获取鼠标位置
@@ -25,8 +25,10 @@ set_event_handlers(
     on_mouseup=mouse_up,
 )
 
-# 启动钩子监听
-start_listening()
-pythoncom.PumpMessages()
+if __name__ == '__main__':
+    # 启动监听
+    start_listening()
+    while True:
+        time.sleep(1)
 
 
