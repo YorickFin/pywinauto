@@ -39,8 +39,8 @@ def key_click(key_name: str, duration=0.04):
     key_up(key_name)
 
 def key_combination(keys: list, duration=0.1):
-    """使用keybd_event模拟组合键"""
-    # 按下所有键
+    """模拟组合键"""
+
     for key_name in keys:
         key_down(key_name)
         time.sleep(0.04)
